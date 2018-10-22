@@ -37,12 +37,46 @@ JHtml::_('jquery.framework');
 #######*/
 /** START ---------------------------------------------------------------------------------------------------------------------------------*/
 	// GLOBAL GET SCRIPTS & STYLESHEETS
-		$headerdata 	= $jf_doc->getHeadData();
-		$styleSheets 	= $headerdata['styleSheets'];
-		$headerdata['styleSheets'] = array();
-		$scripts 		= $headerdata['scripts'];
-		$headerdata['scripts'] = array();
-	
+        // V0 {
+            // $headerdata                = $jf_doc->getHeadData();
+            // $styleSheets 	          = $headerdata['styleSheets'];
+            // $headerdata['styleSheets'] = array();
+            // $scripts 		          = $headerdata['scripts'];
+            // $headerdata['scripts']     = array();
+        // } V0
+
+        // V1 {
+            // $headerdata                = JDocumentHTML::getHeadData();
+            // $styleSheets 	          = $headerdata['styleSheets'];
+            // $headerdata['styleSheets'] = array();
+            // $scripts 		          = $headerdata['scripts'];
+            // $headerdata['scripts']     = array();
+        // } V1
+
+        // V2 مهدی آنیلی {
+            // $headerdata                = (method_exists($jf_doc,'getHeadData') ? $jf_doc->getHeadData() : null);
+            // $styleSheets 	          = $headerdata['styleSheets'];
+            // $headerdata['styleSheets'] = array();
+            // $scripts 		          = $headerdata['scripts'];
+            // $headerdata['scripts']     = array();
+        // } V2 مهدی آنیلی
+
+        // V3 مهدی آنیلی {
+            if (method_exists($jf_doc,'getHeadData'))
+            {
+                $headerdata                = $jf_doc->getHeadData();
+                $styleSheets 	           = $headerdata['styleSheets'];
+                $headerdata['styleSheets'] = array();
+                $scripts 		           = $headerdata['scripts'];
+                $headerdata['scripts']     = array();
+            }
+            else
+            {
+                $styleSheets = array();
+                $scripts     = array();
+            }
+        // } V3 مهدی آنیلی
+
 	// REMOVE ############ - [FONTAWESOME.CSS]
 		// search - for attached stylesheet
 			$search_fontawesome = 'media\/gantry5\/assets\/css\/font-awesome';
