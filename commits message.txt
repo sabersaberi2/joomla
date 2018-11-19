@@ -1,3 +1,4 @@
 #1 - add sirena template (for #patch_1)
 #2 - sirena template #patch_1
 #3 - add Authentication - EMail package (for #patch_1)
+#4 - Authentication - EMail package #patch_1
