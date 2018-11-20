@@ -3,3 +3,4 @@
 #3 - add Authentication - EMail package (for #patch_1)
 #4 - Authentication - EMail package #patch_1
 #5 - JF Sirena template Customize
+#6 - Authentication - EMail package #patch_2

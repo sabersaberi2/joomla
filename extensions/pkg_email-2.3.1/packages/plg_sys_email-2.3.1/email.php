@@ -22,7 +22,7 @@ class plgSystemEmail extends JPlugin
             $task = $app->input->getCmd('task');
             if($task != 'reset.confirm') return;
             
-            // ok, at this point we know that the form has been submitted.
+            // ok, at this point we know that the reset password form has been submitted.
             $jform = $app->input->get('jform',array(),'array');
             if(count($jform) && preg_match('/@/',$jform['username'])) {
                 $db = JFactory::getDbo();
